@@ -10,3 +10,4 @@ class Visualizadas extends ChangeNotifier {
     notifyListeners();
   }
 }
+git add .
