@@ -1,10 +1,20 @@
 import 'package:app02/controllers/visualizadas.dart';
+import 'package:app02/models/conversa.dart';
 import 'package:flutter/material.dart';
 import 'package:app02/models/conversas.dart';
 import 'package:provider/provider.dart';
+import 'package:app02/Views/chat.dart';
 
 class TelaInicial extends StatelessWidget {
   const TelaInicial({super.key});
+  void abrirConversa(BuildContext context, Conversa conversa) {
+    Navigator.push(
+      context,
+      MaterialPageRoute(
+        builder: (_) => Chat(conversa: conversa),
+      ),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -260,6 +270,7 @@ class TelaInicial extends StatelessWidget {
                         selectedTileColor: Colors.amber,
                         onTap: () {
                           visualizadasProvider.selecionarConversa(index);
+                          abrirConversa(context, conversas);
                         },
                       );
                     },

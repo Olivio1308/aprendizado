@@ -4,7 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 void main() {
-  return runApp(MyApp());
+  return   runApp(
+    MultiProvider(
+      providers: [
+        ChangeNotifierProvider(create: (_) => Visualizadas()),
+      ],
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
