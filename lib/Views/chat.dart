@@ -89,6 +89,7 @@ class Chat extends StatelessWidget {
                   onPressed: () {
                     Provider.of<Visualizadas>(context, listen: false)
                         .enviar(_controller.text);
+                        _controller.clear();
                   },
                 ),
                 SizedBox(
